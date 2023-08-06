@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.full{
+
+    height: 100vh;
+    width: auto;
+    background: linear-gradient(rgb(0,0,0,0.5) , rgb(0,0,0,0.5) ) , url(./umg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: aliceblue;
+}
+
+.show{
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 25%;
+    left: 8%;
+
+}
+
+
+h2{
+    color: green;
+    margin-bottom: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2 i{
+
+    color: white;
+}
+
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  }
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+
+h1{
+
+    font-size: 3em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 30px;
+    
+}
+
+p{
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form{
+    margin-top: 50px;
+    width: fit-content;
+    display: flex;
+    background-color: white;
+
+}
+
+form input{
+
+    padding: 10px;
+    width: 300px;
+    color: black;
+    border-radius: 2px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+button{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    color: white;
+}

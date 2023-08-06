@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/d8790da0b7.js" crossorigin="anonymous"></script>
+    <title>Subscribe</title>
 </head>
 <body>
+
+    <div class="full">
+
+        <div class="show">
+            <h2><i class="fa-solid fa-terminal blink"></i> Coming Soon </h2>
+            <h1>Our Brand New <br>Website is on it's Way.</h1>
+            <p>Subscribe For More Details.</p>
+            <form name="submit-to-google-sheet">
+                    <input type="email" name="Email" placeholder="Enter Your Email">
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button> 
+            </form>
+            <span id="s" style="margin-top: 10px; color: green;"></span>
+        </div>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwyXh3FMOGqGliiVM0SMj6CZf4g8dDx34-QuwLtRCw9Fjc2W8hwDTTdKY2Bq7XK8Kic/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById('s')
+
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>{
+                form.reset()
+                msg.innerText ="Thank You For Your Subscription"
+                setTimeout( ()=>{
+                msg.innerText =""
+                },5000)
+                
+
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
     
 </body>
 </html>
